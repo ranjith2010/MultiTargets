@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072634BD1E4D98D3000D347D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072634BC1E4D98D3000D347D /* Constants.swift */; };
 		07F271A01E4D94BD003C9170 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F2719F1E4D94BD003C9170 /* AppDelegate.swift */; };
 		07F271A21E4D94BD003C9170 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F271A11E4D94BD003C9170 /* ViewController.swift */; };
 		07F271A51E4D94BD003C9170 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07F271A31E4D94BD003C9170 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		072634BC1E4D98D3000D347D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		07F2719C1E4D94BD003C9170 /* Targets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Targets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F2719F1E4D94BD003C9170 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07F271A11E4D94BD003C9170 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				07F2719F1E4D94BD003C9170 /* AppDelegate.swift */,
+				072634BC1E4D98D3000D347D /* Constants.swift */,
 				07F271A11E4D94BD003C9170 /* ViewController.swift */,
 				07F271A31E4D94BD003C9170 /* Main.storyboard */,
 				07F271A61E4D94BD003C9170 /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			files = (
 				07F271A21E4D94BD003C9170 /* ViewController.swift in Sources */,
 				07F271A01E4D94BD003C9170 /* AppDelegate.swift in Sources */,
+				072634BD1E4D98D3000D347D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +168,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		07F271AC1E4D94BD003C9170 /* Debug */ = {
+		072634BE1E4D9CAD000D347D /* Production */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -211,9 +215,23 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
-			name = Debug;
+			name = Production;
 		};
-		07F271AD1E4D94BD003C9170 /* Release */ = {
+		072634BF1E4D9CAD000D347D /* Production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B76KMHZKZ7;
+				INFOPLIST_FILE = Targets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DProduction";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FlipFoto.Development.Production;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Production;
+		};
+		07F271AC1E4D94BD003C9170 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -236,11 +254,17 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -248,38 +272,27 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				VALIDATE_PRODUCT = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
-			name = Release;
+			name = Development;
 		};
-		07F271AF1E4D94BD003C9170 /* Debug */ = {
+		07F271AF1E4D94BD003C9170 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B76KMHZKZ7;
 				INFOPLIST_FILE = Targets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.FlipFoto.Development.Targets;
+				OTHER_SWIFT_FLAGS = "-DDevelopment";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FlipFoto.Development.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
-			name = Debug;
-		};
-		07F271B01E4D94BD003C9170 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B76KMHZKZ7;
-				INFOPLIST_FILE = Targets/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.FlipFoto.Development.Targets;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
+			name = Development;
 		};
 /* End XCBuildConfiguration section */
 
@@ -287,19 +300,20 @@
 		07F271971E4D94BD003C9170 /* Build configuration list for PBXProject "Targets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				07F271AC1E4D94BD003C9170 /* Debug */,
-				07F271AD1E4D94BD003C9170 /* Release */,
+				07F271AC1E4D94BD003C9170 /* Development */,
+				072634BE1E4D9CAD000D347D /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Development;
 		};
 		07F271AE1E4D94BD003C9170 /* Build configuration list for PBXNativeTarget "Targets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				07F271AF1E4D94BD003C9170 /* Debug */,
-				07F271B01E4D94BD003C9170 /* Release */,
+				07F271AF1E4D94BD003C9170 /* Development */,
+				072634BF1E4D9CAD000D347D /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
 		};
 /* End XCConfigurationList section */
 	};
