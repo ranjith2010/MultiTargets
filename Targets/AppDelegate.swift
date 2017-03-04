@@ -19,10 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setEnvironment() {
-        #if Development
+        #if DEVELOPMENT
             serverEndPointURL = "www.dev.google.com"
-        #elseif Production
-            serverEndPointURL = "www.app.google.com"
+        #else
+            serverEndPointURL = "www.google.com"
         #endif
     }
 
